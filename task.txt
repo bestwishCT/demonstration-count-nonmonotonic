@@ -1,0 +1,2 @@
+D1完整抄出Table16三个demo数的四列；D2比较0到1和1到2的EM recall、citation recall变化，百分点表示比例指标，MAUVE不得称百分点；D3核对正文至少一个示例与更多示例趋势，区分ChatGPT和原始LLaMA；D4说明该表是否证明单调增益、统计显著性、所有任务最优示例数，并说明三seed平均与未提供该表方差的限制。
+只根据所供原文。输出严格JSON，含decisions数组，id为D1至D4，各含answer、evidence数组（source_id、start_line、end_line整数且含两端）和limitations。无需重抄原文，按行定位。证据不足须明说。约1000中文字。

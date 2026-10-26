@@ -1,0 +1,56 @@
+{
+  "status": "ranges_valid",
+  "errors": [],
+  "semantic": "not_evaluated",
+  "excerpts": [
+    {
+      "decision": "D1",
+      "source_id": "A-P17",
+      "start_line": 1,
+      "end_line": 7,
+      "text": "Fluency Correct. Citation\n(MAUVE) (EM) Rec. Prec.\nChatGPT(VANILLA)\n#demo = 0 74.5 41.9 69.3 73.4\n#demo = 1 68.9 39.8 74.6 73.2\n#demo = 2 66.6 40.4 73.6 72.5\nTable 16: Different demonstrations on ASQA."
+    },
+    {
+      "decision": "D2",
+      "source_id": "A-P17",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "Fluency Correct. Citation\n(MAUVE) (EM) Rec. Prec.\nChatGPT(VANILLA)\n#demo = 0 74.5 41.9 69.3 73.4\n#demo = 1 68.9 39.8 74.6 73.2\n#demo = 2 66.6 40.4 73.6 72.5"
+    },
+    {
+      "decision": "D3",
+      "source_id": "A-P16",
+      "start_line": 53,
+      "end_line": 60,
+      "text": "G.3 Effect of Demonstrations\nTable 16 shows results on effect of different num-\nbers of demonstrations. We see that numbers of\ndemonstrations do not affect ChatGPT’s correct-\nness but using at least one demonstration ensures\nhigh citation recall. For the original LLaMA model,\nTable 16 shows the trend that more demonstrations\nlead to better performance."
+    },
+    {
+      "decision": "D3",
+      "source_id": "A-P17",
+      "start_line": 3,
+      "end_line": 6,
+      "text": "ChatGPT(VANILLA)\n#demo = 0 74.5 41.9 69.3 73.4\n#demo = 1 68.9 39.8 74.6 73.2\n#demo = 2 66.6 40.4 73.6 72.5"
+    },
+    {
+      "decision": "D4",
+      "source_id": "A-P17",
+      "start_line": 3,
+      "end_line": 6,
+      "text": "ChatGPT(VANILLA)\n#demo = 0 74.5 41.9 69.3 73.4\n#demo = 1 68.9 39.8 74.6 73.2\n#demo = 2 66.6 40.4 73.6 72.5"
+    },
+    {
+      "decision": "D4",
+      "source_id": "A-P16",
+      "start_line": 53,
+      "end_line": 60,
+      "text": "G.3 Effect of Demonstrations\nTable 16 shows results on effect of different num-\nbers of demonstrations. We see that numbers of\ndemonstrations do not affect ChatGPT’s correct-\nness but using at least one demonstration ensures\nhigh citation recall. For the original LLaMA model,\nTable 16 shows the trend that more demonstrations\nlead to better performance."
+    },
+    {
+      "decision": "D4",
+      "source_id": "A-P17",
+      "start_line": 27,
+      "end_line": 34,
+      "text": "G.6 Main Results\nWe show full results of our experiments along with\nthe standard deviation in Tables 19, 20, and 21. We\nrepeat all experiments with three different random\nseeds. However, for ChatGPT RERANK , we use\nonly one seeded run since each run repeats the\ngeneration step four times, and more experiments\nwould incur significant costs."
+    }
+  ]
+}

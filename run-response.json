@@ -1,0 +1,124 @@
+{
+  "ok": true,
+  "data": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n  \"decisions\": [\n    {\n      \"id\": \"D1\",\n      \"answer\": \"按表头恢复四列（顺序）：Fluency (MAUVE)、Correct. (EM)、Citation Rec.、Prec.。Table 16 中针对 ChatGPT 的三档示例数完整数值为：#demo=0 → [Fluency(MAUVE)=74.5, EM=41.9, Citation Rec.=69.3, Prec.=73.4]；#demo=1 → [68.9, 39.8, 74.6, 73.2]；#demo=2 → [66.6, 40.4, 73.6, 72.5]。\",\n      \"evidence\": [\n        {\n          \"source_id\": \"A-P17\",\n          \"start_line\": 1,\n          \"end_line\": 7\n        }\n      ],\n      \"limitations\": \"Table 16 在提供的页码中只列出了 ChatGPT 的三档示例数值；原始 LLaMA 的数值并未在该表中显示（见下文文字描述）。表中未列出均值/方差等不确定性信息。\"\n    },\n    {\n      \"id\": \"D2\",\n      \"answer\": \"对 ChatGPT，按“百分点”表述（适用于比率/召回/EM 等指标）：EM (Correct.) 从 #demo=0→1：41.9 → 39.8，变化 = −2.1 百分点；从 #demo=1→2：39.8 → 40.4，变化 = +0.6 百分点。Citation recall 从 #demo=0→1：69.3 → 74.6，变化 = +5.3 百分点；从 #demo=1→2：74.6 → 73.6，变化 = −1.0 百分点。MAUVE（Fluency）尽管有数值变化（74.5→68.9→66.6），按要求不以“百分点”表述，应仅视为 MAUVE 指标绝对数值变化（−5.6、−2.3）。\",\n      \"evidence\": [\n        {\n          \"source_id\": \"A-P17\",\n          \"start_line\": 1,\n          \"end_line\": 6\n        }\n      ],\n      \"limitations\": \"仅基于表中给出的单次数值，未提供每个条目的置信区间或标准差，无法判断这些百分点变化是否统计显著或仅为随机波动。\"\n    },\n    {\n      \"id\": \"D3\",\n      \"answer\": \"正文中至少一个示例（Table 16 的 ChatGPT 行）与正文总结的多数示例趋势一致：文中直接陈述（G.3）指出“numbers of demonstrations do not affect ChatGPT’s correctness but using at least one demonstration ensures high citation recall”（即 ChatGPT 的 correctness 基本不受示例数影响，而至少一个示例能提高 citation recall）；这与表中 EM（41.9→39.8→40.4，波动小）与 citation recall（69.3→74.6→73.6，0→1 有明显提升）的数值相符。关于原始 LLaMA，正文声明“对于原始 LLaMA 模型，Table 16 shows the trend that more demonstrations lead to better performance.”——该句表明作者认为 LLaMA 随示例数增加性能上升，但在所给页码中没有看到 LLaMA 的具体数值行，故无法用数值在表内核对该趋势。\",\n      \"evidence\": [\n        {\n          \"source_id\": \"A-P16\",\n          \"start_line\": 53,\n          \"end_line\": 60\n        },\n        {\n          \"source_id\": \"A-P17\",\n          \"start_line\": 3,\n          \"end_line\": 6\n        }\n      ],\n      \"limitations\": \"无法对 LLaMA 的“随示例数增长更好”的断言做数值核验，因为表中并未提供 LLaMA 的具体行；对 ChatGPT 的结论仅基于单次观测值，缺少重复/方差信息以评估稳健性。\"\n    },\n    {\n      \"id\": \"D4\",\n      \"answer\": \"该表并不能证明单调增益、统计显著性或“所有任务”的最优示例数：\\n- 单调增益：对于 ChatGPT，某些指标（例如 citation recall 在 0→1 有上升，但 1→2 有微降）并非严格单调递增；EM 也呈现先降后微升的非单调变化。因此表中数值并不支持普适的单调增益结论。对 LLaMA，正文有陈述声称随示例数增加趋于更好，但在提供页码中缺乏 LLaMA 的具体数值，无法用表内数据验证单调性。 \\n- 统计显著性：表中只给出点估计，未列出标准差或置信区间；文中在别处说明“完整结果及标准差在 Tables 19–21，所有实验用三个随机 seed 重复”（表明作者在其它表格报告了方差），但 Table 16 本身未提供这些不确定性度量，因此无法判断数值差异是否显著。 \\n- 所有任务最优示例数：Table 16 针对 ASQA（单一任务），无法推广到“所有任务”的最优示例数；文中并未用该表证明跨任务最佳示例数。 \\n另外一项限制是实验重复性与方差：文中说明总体实验用三种随机 seed 重复并在 Tables 19–21 报告标准差，但 Table 16 在所给页码未显示方差/三 seed 平均/置信区间，因此基于该表的结论受限于未提供的不确定性信息。\",\n      \"evidence\": [\n        {\n          \"source_id\": \"A-P17\",\n          \"start_line\": 3,\n          \"end_line\": 6\n        },\n        {\n          \"source_id\": \"A-P16\",\n          \"start_line\": 53,\n          \"end_line\": 60\n        },\n        {\n          \"source_id\": \"A-P17\",\n          \"start_line\": 27,\n          \"end_line\": 34\n        }\n      ],\n      \"limitations\": \"结论仅基于所提供页码的内容；作者提到的方差/完整统计信息在其它表（Tables 19–21）中呈现，但 those tables 未包含在本次提供的原文片段，因此无法就方差或统计显著性给出定量证明。\"\n    }\n  ]\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {
+          "content_filter_results": {
+            "hate": {
+              "filtered": false,
+              "severity": "safe"
+            },
+            "protected_material_code": {
+              "detected": false,
+              "filtered": false
+            },
+            "protected_material_text": {
+              "detected": false,
+              "filtered": false
+            },
+            "self_harm": {
+              "filtered": false,
+              "severity": "safe"
+            },
+            "sexual": {
+              "filtered": false,
+              "severity": "safe"
+            },
+            "violence": {
+              "filtered": false,
+              "severity": "safe"
+            }
+          }
+        }
+      }
+    ],
+    "created": 1792991335,
+    "id": "chatcmpl-Ed7F1TuLdfATJ51G9Hbzzf9H0oPsi",
+    "model": "chenkun/gpt-5-mini",
+    "object": "chat.completion",
+    "prompt_filter_results": [
+      {
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "jailbreak": {
+            "detected": false,
+            "filtered": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        },
+        "prompt_index": 0
+      }
+    ],
+    "routing": {
+      "serving_pipereplica": "d20261022040548-dc08436e-default-r1-dp0-default"
+    },
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 3814,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 2304,
+        "rejected_prediction_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 6,
+        "engine_ttft_ms": 62,
+        "engine_ttlt_ms": 24718,
+        "pre_inference_ms": 93,
+        "service_tbt_ms": 6,
+        "service_ttft_ms": 285,
+        "service_ttlt_ms": 24935,
+        "user_visible_ttft_ms": 191
+      },
+      "prompt_tokens": 2175,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 5989
+    }
+  },
+  "notice": {
+    "billing": {
+      "balance": {
+        "redacted": "private account balance"
+      },
+      "sufficient": false
+    }
+  },
+  "meta": {
+    "request_id": "06279f8e-c767-496c-9d0f-64a78e5e992d",
+    "cli_version": "2.8.1",
+    "cli_commit": "a735f03d78b958fa7836e9a9caf4c65a044e1e88",
+    "cli_modified": false,
+    "command": "bohr chat",
+    "duration_ms": 27159,
+    "timestamp": 1792991361
+  }
+}
